@@ -9,7 +9,7 @@ import io.cucumber.java.pt.Entao;
 public class Steps {
 
 	Metodos metodos = new Metodos();
-	CreateAccount account = new CreateAccount();
+	CriarConta account = new CriarConta();
 
 	@Dado("que eu esteja na tela de cadastro de cliente")
 	public void que_eu_esteja_na_tela_de_cadastro_de_cliente() {
@@ -28,7 +28,7 @@ public class Steps {
 	@Entao("cadastro realizado com sucesso")
 	public void cadastro_realizado_com_sucesso() throws IOException {
 
-		account.validarUser();
+		account.validaUsuario();
 
 	}
 

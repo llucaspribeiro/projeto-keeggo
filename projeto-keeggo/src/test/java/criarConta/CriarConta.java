@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 
-public class CreateAccount extends Metodos {
+public class CriarConta extends Metodos {
 
 	Metodos metodo = new Metodos();
 
@@ -14,7 +14,7 @@ public class CreateAccount extends Metodos {
 	By createAccount = By.xpath("//a[contains(text(),\"CREATE NEW ACCOUNT\")]");
 	By userName = By.name("usernameRegisterPage");
 	By email = By.name("emailRegisterPage");
-	By password = By.name("passwordRegisterPage");
+	By senha = By.name("passwordRegisterPage");
 	By confimrPassword = By.name("confirm_passwordRegisterPage");
 	By firstName = By.name("first_nameRegisterPage");
 	By lastName = By.name("last_nameRegisterPage");
@@ -40,30 +40,30 @@ public class CreateAccount extends Metodos {
 		metodo.clicar(user, "clicar em user para criar a nova conta");
 
 		// clicando no menu para abrir conta
-		metodo.pausa(3000, "");
+		metodo.pausarElemento(3000, "");
 		metodo.clicar(createAccount, "clicando no menu create a new account");
 
 		// preencher o formulario de abertura de conta
 		metodo.esperarElemento(this.userName, "esperando o botão user ficar acessível");
-		metodo.escrever(this.userName, this.usuario, "preencher o campo nome");
+		metodo.preencher(this.userName, this.usuario, "preencher o campo nome");
 		System.out.println(this.usuario);
-		metodo.escrever(this.email, email, "");
-		metodo.escrever(this.password, password, "");
-		metodo.escrever(this.confimrPassword, confirmPassword, "");
-		metodo.escrever(this.firstName, firstName, "");
-		metodo.escrever(this.lastName, lastName, "");
-		metodo.escrever(this.country, country, "");
-		metodo.escrever(this.city, city, "");
-		metodo.escrever(this.address, adress, "");
-		metodo.escrever(this.province, province, "");
-		metodo.escrever(this.postalCode, postalCode, "");
+		metodo.preencher(this.email, email, "");
+		metodo.preencher(this.senha, password, "");
+		metodo.preencher(this.confimrPassword, confirmPassword, "");
+		metodo.preencher(this.firstName, firstName, "");
+		metodo.preencher(this.lastName, lastName, "");
+		metodo.preencher(this.country, country, "");
+		metodo.preencher(this.city, city, "");
+		metodo.preencher(this.address, adress, "");
+		metodo.preencher(this.province, province, "");
+		metodo.preencher(this.postalCode, postalCode, "");
 		metodo.clicar(concordo, "");
 		metodo.clicar(registro, "");
 
 	}
 
-	public void validarUser() throws IOException {
-		metodo.pausa(3000, "");
+	public void validaUsuario() throws IOException {
+		metodo.pausarElemento(3000, "");
 		String loginName = driver.findElement(By.cssSelector("#menuUserLink > span")).getText();
 		System.out.println("O nome retornado é: " + loginName);
 		assertEquals(this.usuario, loginName);

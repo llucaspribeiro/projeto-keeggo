@@ -35,7 +35,7 @@ public class Metodos {
 
 	public void abrirNavegador(String site, String navegador, String descricao) {
 
-		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Users/llucaspribeiro/Downloads/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(site);
@@ -68,7 +68,7 @@ public class Metodos {
 	 * @param descricao
 	 */
 
-	public void escrever(By elemento, String texto, String descricao) {
+	public void preencher(By elemento, String texto, String descricao) {
 
 		try {
 			driver.findElement(elemento).sendKeys(texto);
@@ -86,7 +86,7 @@ public class Metodos {
 	 * @param tempo
 	 * @param descricao
 	 */
-	public void pausa(int tempo, String descricao) {
+	public void pausarElemento(int tempo, String descricao) {
 
 		try {
 			Thread.sleep(tempo);
