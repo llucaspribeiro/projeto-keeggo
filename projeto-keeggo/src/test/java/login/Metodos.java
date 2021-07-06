@@ -25,7 +25,7 @@ public class Metodos {
 
 	public void abrirNavegador(String site) {
 
-		System.setProperty("webdriver.chrome.driver", "/Users/llucaspribeiro/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(site);
